@@ -12,11 +12,12 @@
 .docs-embed {
     -webkit-font-smoothing: antialiased;
     font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+    background-color: #fff;
     border: 1px solid #dcdcdc;
     border-right: 0;
     &__element {
         position: relative;
-        padding: 6px 10px 10px 20px;
+        padding: 4px 10px 6px 20px;
         max-width: 370px;
 
         &:before,
