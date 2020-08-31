@@ -10,9 +10,36 @@
 
 
 .docs-embed {
+    -webkit-font-smoothing: antialiased;
     font-family: "Guardian Headline","Guardian Egyptian Web",Georgia,serif;
+    border: 1px solid #dcdcdc;
+    border-right: 0;
     &__element {
         position: relative;
+        padding: 6px 10px 10px 20px;
+        max-width: 370px;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100vw;
+        }
+        &:before {
+            display: block;
+            top: 0;
+            height: 1px;
+            background-color: #dcdcdc;
+        }
+        &:after {
+            display: none;
+            top: -8px;
+            height: 3px;
+            border-top: 1px solid #dcdcdc;
+            border-bottom: 1px solid #dcdcdc;
+        }
+
 
         .link {
             position: absolute;
@@ -20,8 +47,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            &:hover ~ .button .button__icon {
-                transform: scale(1.15);
+            &:hover ~ .button {
+                .button__label {
+                    transform: translateX(1px);
+                }
+                .button__icon {
+                    transform: scale(1.09);
+                    svg rect {
+                        fill: #F3C100;
+                    }
+                }
             }
         }
 
@@ -39,20 +74,32 @@
             color: #121212;
         }
         .button {
-            font-family: 'Guardian Text Sans Web', sans-serif;
+            margin-top: 8px;
+            margin-left: -2px;
             &__icon,
             &__label {
                 display: inline-block;
                 vertical-align: middle;
-            }
-            &__icon {
-                transition: transform 240ms ease-out;
+                transition: all 300ms ease-out;
             }
             &__label {
-                padding-left: 2px;
+                padding-left: 3px;
                 padding-bottom: 4px;
                 color: #052962;
+                font-family: 'Guardian Text Sans Web', sans-serif;
+                font-size: 15px;
+                transform: translateX(0);
             }
+        }
+
+        &:nth-child(1) {
+            margin-top: 11px;
+            &:after {
+                display: block;
+            }
+        }
+        &:nth-child(2) {
+            margin-top: 12px;
         }
     }
 }
